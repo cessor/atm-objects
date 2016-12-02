@@ -21,8 +21,8 @@ class Accounts(object):
         return pins[0]
 
     def for_(self, number):
-        if self._exists(number):
-            pin = self._pin(number)
+        if self.exists(number):
+            pin = self.pin(number)
             return UnauthenticatedAccount(number, pin)
         return UnknownAccount()
 
