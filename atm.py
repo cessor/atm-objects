@@ -6,12 +6,12 @@ class Accounts(object):
     def __init__(self, rows):
         self.rows = list(rows)
 
-    def _exists(self, number):
+    def exists(self, number):
         return number in [
             number for number, pin in self.rows
         ]
 
-    def _pin(self, account_number):
+    def pin(self, account_number):
         pins = [
             pin.strip()
             for number, pin
