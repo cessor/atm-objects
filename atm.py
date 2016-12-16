@@ -166,9 +166,9 @@ class Choice(object):
 
     @classmethod
     def ask(self, history):
-        choice = input("Select: ").lower()
+        choice = input("Select: ").lower().strip()
 
-        if choice.strip() not in 'bdwrq':
+        if not choice or choice not in 'bdwrq':
             return Choice()
 
         if choice == 'b':
