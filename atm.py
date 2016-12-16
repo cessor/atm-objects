@@ -155,6 +155,7 @@ class Quit(object):
         self.history = history
 
     def act(self, account):
+        self.history.save()
         print('Thank you for using Heidelberg Student Bank services')
         exit()
 
@@ -243,7 +244,6 @@ class Atm(object):
         self.session = Session(account, self.history)
         while True:
             self.session.run()
-        self.history.save()
 
 
 if __name__ == '__main__':
